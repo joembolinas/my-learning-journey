@@ -66,3 +66,4 @@ automation/logs/
 ehthumbs.db
 Thumbs.db
 *.code-workspace
+.bat
