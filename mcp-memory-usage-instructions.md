@@ -7,6 +7,84 @@
 
 ---
 
+## 📊 Knowledge Graph Visualization
+
+The MCP Memory system creates a comprehensive knowledge graph of your academic workspace. Here's how it's structured:
+
+```mermaid
+graph TD
+    %% Central Academic Project
+    AWP[🎓 Academic_Workspace_Project<br/>TERM-3 SY-2024-25]
+    
+    %% Student User
+    SU[👤 Student_User<br/>BS IT Network & Cybersecurity]
+    
+    %% Five Core Courses
+    IT103[💻 MO-IT103<br/>Computer Programming 2]
+    IT143[🔒 MO-IT143<br/>Ethical Hacking]
+    IT147[🛡️ MO-IT147<br/>Info Assurance Security 1]
+    IT148[🚀 MO-IT148<br/>App Dev Emerging Tech]
+    IT151[⚙️ MO-IT151<br/>Platform Technologies]
+    
+    %% Core Support Systems
+    GHA[🤖 GitHub_Actions_Automation]
+    PS[🔐 Privacy_Solution]
+    FCS[📝 Feedback_Collection_System]
+    VS[🖥️ VS_Code_Workspace_Config]
+    
+    %% User Management
+    SU -->|manages| AWP
+    SU -->|enrolled_in| IT103
+    SU -->|enrolled_in| IT143
+    SU -->|enrolled_in| IT147
+    SU -->|enrolled_in| IT148
+    SU -->|enrolled_in| IT151
+    
+    %% Project Architecture
+    AWP -->|includes| IT103
+    AWP -->|includes| IT143
+    AWP -->|includes| IT147
+    AWP -->|includes| IT148
+    AWP -->|includes| IT151
+    AWP -->|implements| GHA
+    AWP -->|implements| PS
+    AWP -->|implements| FCS
+    AWP -->|implements| VS
+    
+    %% Automation Support
+    GHA -->|supports| IT103
+    GHA -->|supports| IT143
+    GHA -->|supports| IT147
+    GHA -->|supports| IT148
+    GHA -->|supports| IT151
+    
+    %% Course Relationships
+    IT103 -.->|foundation_for| IT148
+    IT143 -.->|security_for| IT147
+    IT147 -.->|security_for| IT151
+    IT148 -.->|emerging_tech_in| IT151
+    
+    %% Styling
+    classDef courseNode fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef projectNode fill:#f3e5f5,stroke:#4a148c,stroke-width:3px
+    classDef systemNode fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef userNode fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    
+    class IT103,IT143,IT147,IT148,IT151 courseNode
+    class AWP projectNode
+    class GHA,PS,FCS,VS systemNode
+    class SU userNode
+```
+
+### How VS Code Copilot Uses This Knowledge Graph
+
+1. **Context Retrieval**: When you ask about a course, Copilot queries the MCP Memory to understand relationships
+2. **Cross-Course Connections**: Copilot knows IT103 is foundation for IT148, so it can suggest relevant examples
+3. **System Integration**: Copilot understands which automation systems support which courses
+4. **Portfolio Integration**: Copilot tracks how course work feeds into your professional portfolio
+
+---
+
 ## 1. **Memory Format**
 
 All persistent memory is stored as JSON files, following this structure:
