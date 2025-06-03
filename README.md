@@ -21,6 +21,18 @@ This workspace represents a complete transformation of GitHub and VS Code into a
 
 ---
 
+## 🚀 Quick Navigation
+
+📚 **[Complete Documentation Index](DOCUMENTATION-INDEX.md)** - Central navigation for all workspace documentation
+
+**Essential Files:**
+- 📖 [Quick Start Guide](QUICK-START.md) - Daily workflow and VS Code tasks
+- 🚀 [Subject Workspaces Guide](SUBJECT-WORKSPACES-GUIDE.md) - Course navigation
+- 🧠 [MCP Memory](mcp-memory.md) - AI collaboration and project history
+- 📊 [Workspace Progress](WORKSPACE-PROGRESS.md) - Complete development timeline
+
+---
+
 ## 📚 Course Structure
 
 ### TERM-3 SY-2024-25 Courses
