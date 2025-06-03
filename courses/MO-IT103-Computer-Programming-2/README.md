@@ -14,6 +14,66 @@ Advanced programming concepts including:
 - Database integration
 - Software design patterns
 
+## 🧠 MCP Memory Integration
+
+This course connects to your broader academic journey through the MCP Memory Knowledge Graph:
+
+```mermaid
+graph TB
+    subgraph "MO-IT103 Programming Foundation"
+        A[💻 Object-Oriented Programming]
+        B[🗄️ Database Integration]
+        C[🌐 Web Development]
+        D[⚙️ Software Design Patterns]
+    end
+    
+    subgraph "Cross-Course Applications"
+        E[🚀 MO-IT148 Emerging Tech<br/>Modern Frameworks]
+        F[🔒 MO-IT143 Ethical Hacking<br/>Secure Coding]
+        G[🛡️ MO-IT147 Security<br/>Secure Development]
+        H[⚙️ MO-IT151 Platform Tech<br/>Cloud Applications]
+    end
+    
+    subgraph "Portfolio Development"
+        I[💼 Full-Stack Projects]
+        J[📚 Technical Documentation]
+        K[🏆 Professional Showcase]
+    end
+    
+    %% Foundation connections
+    A --> E
+    A --> F
+    B --> H
+    C --> E
+    D --> G
+    
+    %% Portfolio integration
+    A --> I
+    B --> I
+    C --> I
+    D --> J
+    I --> K
+    J --> K
+    
+    %% MCP Memory tracking
+    L[🧠 MCP Memory] -.-> A
+    L -.-> B
+    L -.-> C
+    L -.-> D
+    L -.-> I
+    L -.-> J
+    
+    style L fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    style A fill:#e1f5fe,stroke:#01579b
+    style I fill:#e8f5e8,stroke:#1b5e20
+```
+
+When working on MO-IT103 projects, GitHub Copilot can:
+- **Reference related security patterns** from MO-IT143 and MO-IT147
+- **Suggest modern framework alternatives** based on MO-IT148 knowledge
+- **Connect database work** to platform technologies in MO-IT151
+- **Track portfolio development** across all programming projects
+
 ## Portfolio Requirements
 - Full-stack web applications
 - Programming projects demonstrating OOP principles

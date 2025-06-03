@@ -100,6 +100,47 @@ This workspace uses Model Context Protocol (MCP) memory tools for persistent con
 
 ---
 
+## 🧠 AI-Powered Knowledge Management
+
+This workspace uses **MCP Memory Knowledge Graph** to maintain intelligent context about your entire academic journey. Here's how it enhances your learning experience:
+
+```mermaid
+graph LR
+    subgraph "Your Learning Journey"
+        A[📚 Course Work] --> B[🧠 MCP Memory]
+        C[🚀 Projects] --> B
+        D[📝 Assignments] --> B
+        E[💼 Portfolio] --> B
+    end
+    
+    subgraph "AI Context Engine"
+        B --> F[🤖 GitHub Copilot]
+        F --> G[Cross-Course Connections]
+        F --> H[Progress Tracking]
+        F --> I[Skill Development]
+    end
+    
+    subgraph "Smart Assistance"
+        G --> J[🎯 Relevant Suggestions]
+        H --> K[📊 Progress Reports]
+        I --> L[💡 Learning Insights]
+    end
+    
+    style A fill:#e1f5fe
+    style C fill:#e8f5e8
+    style F fill:#f3e5f5
+    style J fill:#fff3e0
+```
+
+### What This Means for You
+
+- **🔗 Connected Learning**: Copilot understands how your courses relate to each other
+- **📈 Progress Awareness**: AI tracks your development across all subjects
+- **💡 Smart Suggestions**: Get relevant examples from your own work
+- **🎯 Portfolio Integration**: Automatic connection between coursework and career development
+
+---
+
 ## ⚡ Automation & Workflows
 
 ### GitHub Actions Workflows
