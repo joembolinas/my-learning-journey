@@ -1,0 +1,112 @@
+[
+  {
+    "from": "Academic_Workspace_Project",
+    "to": "MO-IT103",
+    "relationType": "includes"
+  },
+  {
+    "from": "Academic_Workspace_Project",
+    "to": "MO-IT143",
+    "relationType": "includes"
+  },
+  {
+    "from": "Academic_Workspace_Project",
+    "to": "MO-IT147",
+    "relationType": "includes"
+  },
+  {
+    "from": "Academic_Workspace_Project",
+    "to": "MO-IT148",
+    "relationType": "includes"
+  },
+  {
+    "from": "Academic_Workspace_Project",
+    "to": "MO-IT151",
+    "relationType": "includes"
+  },
+  {
+    "from": "Academic_Workspace_Project",
+    "to": "GitHub_Actions_Automation",
+    "relationType": "implements"
+  },
+  {
+    "from": "Academic_Workspace_Project",
+    "to": "Privacy_Solution",
+    "relationType": "implements"
+  },
+  {
+    "from": "Academic_Workspace_Project",
+    "to": "Feedback_Collection_System",
+    "relationType": "implements"
+  },
+  {
+    "from": "Student_User",
+    "to": "Academic_Workspace_Project",
+    "relationType": "manages"
+  },
+  {
+    "from": "Student_User",
+    "to": "MO-IT103",
+    "relationType": "enrolled_in"
+  },
+  {
+    "from": "Student_User",
+    "to": "MO-IT143",
+    "relationType": "enrolled_in"
+  },
+  {
+    "from": "Student_User",
+    "to": "MO-IT147",
+    "relationType": "enrolled_in"
+  },
+  {
+    "from": "Student_User",
+    "to": "MO-IT148",
+    "relationType": "enrolled_in"
+  },
+  {
+    "from": "Student_User",
+    "to": "MO-IT151",
+    "relationType": "enrolled_in"
+  },
+  {
+    "from": "GitHub_Actions_Automation",
+    "to": "MO-IT103",
+    "relationType": "supports"
+  },
+  {
+    "from": "GitHub_Actions_Automation",
+    "to": "MO-IT143",
+    "relationType": "supports"
+  },
+  {
+    "from": "GitHub_Actions_Automation",
+    "to": "MO-IT147",
+    "relationType": "supports"
+  },
+  {
+    "from": "GitHub_Actions_Automation",
+    "to": "MO-IT148",
+    "relationType": "supports"
+  },
+  {
+    "from": "GitHub_Actions_Automation",
+    "to": "MO-IT151",
+    "relationType": "supports"
+  },
+  {
+    "from": "Copilot_Instructions",
+    "to": "Academic_Workspace_Project",
+    "relationType": "configures"
+  },
+  {
+    "from": "Privacy_Solution",
+    "to": "Academic_Workspace_Project",
+    "relationType": "secures"
+  },
+  {
+    "from": "Feedback_Collection_System",
+    "to": "Academic_Workspace_Project",
+    "relationType": "enhances"
+  }
+]
