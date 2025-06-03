@@ -2,17 +2,18 @@
 
 ## 📋 Quick Reference for Course Materials
 
-| Course | Public Content | Private Content |
-|--------|----------------|-----------------|
-| MO-IT103 | ✅ Milestones, Projects, CTF Solutions | 🔒 Course Notes, Study Guides |
-| MO-IT143 | ✅ Portfolio, Assignments | 🔒 Textbook Materials, References |
-| MO-IT147 | ✅ Risk Assessments, Security Designs | 🔒 Compliance Documents |
-| MO-IT148 | ✅ Blockchain Projects, Dashboards | 🔒 Academic Resources |
-| MO-IT151 | ✅ Platform Prototypes, Presentations | 🔒 Learning Materials |
+| Course   | Public Content                                         | Private Content         |
+| -------- | ------------------------------------------------------ | ----------------------- |
+| MO-IT103 | ✅ Milestones, Projects, CTF Solutions, References    | 🔒LMS materials         |
+| MO-IT143 | ✅ Portfolio, Assignments, Course Notes, Study Guides | 🔒 Textbook Materials   |
+| MO-IT147 | ✅ Risk Assessments, Security Designs                  | 🔒 Compliance Documents |
+| MO-IT148 | ✅ Blockchain Projects, Dashboards                     | 🔒 Academic Resources   |
+| MO-IT151 | ✅ Platform Prototypes, Presentations                  | 🔒 Learning Materials   |
 
 ## 🎯 Benefits of This Approach
 
 ### ✅ **Advantages**
+
 - **Compliance**: Meets school regulations for private materials
 - **Collaboration**: Public work visible for portfolio/teamwork
 - **Access Control**: Granular permissions for different content
@@ -20,6 +21,7 @@
 - **Professional**: Shows understanding of access control and security
 
 ### 🔧 **Technical Benefits**
+
 - **Git Submodules**: Industry-standard approach for mixed access
 - **Automated Access**: Can be integrated with GitHub Actions
 - **Version Control**: Both public and private content properly tracked
