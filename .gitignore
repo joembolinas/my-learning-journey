@@ -15,9 +15,10 @@
 
 # NOTE: learning-materials-private/ is a Git submodule and should NOT be ignored
 
-# Academic workspace specific
-*.code-workspace
+# Academic workspace specific - IDE settings only
 .github/
+
+# NOTE: *.code-workspace files should be tracked for project structure
 
 # Local development
 node_modules/

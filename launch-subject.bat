@@ -4,6 +4,9 @@ echo    TERM-3 SY-2024-25 - Subject Launcher
 echo    BS IT Network & Cybersecurity
 echo ===============================================
 echo.
+echo 🔒 Private Learning Materials: NOW AVAILABLE
+echo    Access via: courses/[COURSE]/learning-materials/
+echo.
 echo Choose a subject to open in VS Code:
 echo.
 echo 1. MO-IT103 - Computer Programming 2
@@ -14,10 +17,11 @@ echo 5. MO-IT151 - Platform Technologies
 echo.
 echo 6. Open ALL subjects (5 separate windows)
 echo 7. Main workspace (all subjects together)
+echo 8. Private Materials Only (learning-materials-private)
 echo.
 echo 0. Exit
 echo.
-set /p choice="Enter your choice (0-7): "
+set /p choice="Enter your choice (0-8): "
 
 if "%choice%"=="1" (
     echo Opening MO-IT103 - Computer Programming 2...
@@ -48,6 +52,9 @@ if "%choice%"=="1" (
 ) else if "%choice%"=="7" (
     echo Opening main workspace...
     code "TERM-3_SY-2024-25.code-workspace"
+) else if "%choice%"=="8" (
+    echo Opening private learning materials repository...
+    code "learning-materials-private"
 ) else if "%choice%"=="0" (
     echo Goodbye!
     exit /b
