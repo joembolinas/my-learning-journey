@@ -1,13 +1,13 @@
 # Automated Progress Report
 
-**Generated**: 2025-06-03T17:10:16.055768
+**Generated**: 2025-06-03T17:29:13.820670
 
 ## Portfolio Overview
 
-- **Total Portfolio Items**: 0
+- **Total Portfolio Items**: 1
 - **Active Courses**: 5
-- **Courses with Portfolio Items**: 0
-- **Completion Rate**: 0/5 (0.0%)
+- **Courses with Portfolio Items**: 1
+- **Completion Rate**: 1/5 (20.0%)
 
 ## Course-by-Course Breakdown
 
@@ -20,8 +20,9 @@
 - **Status**: No portfolio items yet
 
 ### 147 Information Assurance Security 1
-- **Portfolio Items**: 0
-- **Status**: No portfolio items yet
+- **Portfolio Items**: 1
+- **Items**:
+  - [Portfolio Item Title] (2025-06-03)
 
 ### 148 Applications Development Emerging Technologies
 - **Portfolio Items**: 0
@@ -35,7 +36,7 @@
 ## Recent Activity
 
 ### Most Recent Portfolio Items
-
+- [Portfolio Item Title] (MO-IT147-Information-Assurance-Security-1) - 2025-06-03
 
 ## Recommendations
 

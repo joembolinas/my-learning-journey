@@ -16,7 +16,7 @@ This portfolio showcases academic work and professional development from the thi
 
 #### 147 Information Assurance Security 1
 
-*Portfolio items will be added as coursework is completed.*
+- [[Portfolio Item Title]](courses\MO-IT147-Information-Assurance-Security-1\portfolio-items\portfolio-2025-06-03-security-assessment.md) - **Course**: [Course Code] - [Course Name]  
 
 #### 148 Applications Development Emerging Technologies
 
@@ -44,8 +44,8 @@ This portfolio showcases academic work and professional development from the thi
 
 ### Portfolio Statistics
 
-- **Total Portfolio Items**: 0
-- **Courses with Portfolio Items**: 0/5
+- **Total Portfolio Items**: 1
+- **Courses with Portfolio Items**: 1/5
 - **Last Updated**: 2025-06-03
 
 ---

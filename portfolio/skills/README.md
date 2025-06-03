@@ -26,7 +26,7 @@
 
 ## Skills from Portfolio Items
 
-
+- **[Primary skills showcased]**: Demonstrated in portfolio projects
 
 ## Soft Skills
 
@@ -44,9 +44,9 @@
 
 ## Portfolio Integration
 
-- **Total Skills Demonstrated**: 0
-- **Portfolio Items Contributing**: 0
-- **Skill Development Courses**: 0
+- **Total Skills Demonstrated**: 1
+- **Portfolio Items Contributing**: 1
+- **Skill Development Courses**: 1
 
 ---
 

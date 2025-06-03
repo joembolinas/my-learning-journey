@@ -1,35 +1,34 @@
 # Course Progress Tracking Report
 
-**Generated**: 2025-06-03T17:10:03.078495
+**Generated**: 2025-06-03T17:29:08.545481
 **Academic Term**: TERM-3 SY-2024-25
 **Program**: BS IT Network & Cybersecurity
 
 ## Executive Summary
 
-- **Overall Progress**: 0.0%
-- **Active Courses**: 0/5
-- **Total Content Items**: 0
-- **Portfolio Completion**: 0.0%
+- **Overall Progress**: 15.0%
+- **Active Courses**: 3/5
+- **Total Content Items**: 3
+- **Portfolio Completion**: 20.0%
 
 ## Course-by-Course Analysis
 
 ### MO-IT103-Computer-Programming-2 - Computer Programming 2
 
-**Status**: 🔴 Getting Started (0% complete)
+**Status**: 🟠 Developing (25% complete)
 
 **Content Summary**:
-- **Assignments**: 0 files
+- **Assignments**: 1 files
 - **Projects**: 0 files
 - **Notes**: 0 files
 - **Portfolio Items**: 0 files
-- **Total**: 0 files
+- **Total**: 1 files
 
 **Key Focus Areas**: Programming, Web Development, Database Integration
 
 **Last Activity**: 2025-06-03T16:01:31.411492
 
 **Recommendations**:
-- 📝 Start working on course assignments
 - 🚀 Begin project development
 - 📚 Create study notes and documentation
 - 🎯 Develop portfolio items to showcase skills
@@ -38,14 +37,14 @@
 
 ### MO-IT143-Ethical-Hacking - Ethical Hacking
 
-**Status**: 🔴 Getting Started (0% complete)
+**Status**: 🟠 Developing (25% complete)
 
 **Content Summary**:
 - **Assignments**: 0 files
-- **Projects**: 0 files
+- **Projects**: 1 files
 - **Notes**: 0 files
 - **Portfolio Items**: 0 files
-- **Total**: 0 files
+- **Total**: 1 files
 
 **Key Focus Areas**: Penetration Testing, Security Assessment, Vulnerability Analysis
 
@@ -53,7 +52,6 @@
 
 **Recommendations**:
 - 📝 Start working on course assignments
-- 🚀 Begin project development
 - 📚 Create study notes and documentation
 - 🎯 Develop portfolio items to showcase skills
 
@@ -61,14 +59,14 @@
 
 ### MO-IT147-Information-Assurance-Security-1 - Information Assurance and Security 1
 
-**Status**: 🔴 Getting Started (0% complete)
+**Status**: 🟠 Developing (25% complete)
 
 **Content Summary**:
 - **Assignments**: 0 files
 - **Projects**: 0 files
 - **Notes**: 0 files
-- **Portfolio Items**: 0 files
-- **Total**: 0 files
+- **Portfolio Items**: 1 files
+- **Total**: 1 files
 
 **Key Focus Areas**: Risk Assessment, Security Policies, Compliance Frameworks
 
@@ -78,7 +76,6 @@
 - 📝 Start working on course assignments
 - 🚀 Begin project development
 - 📚 Create study notes and documentation
-- 🎯 Develop portfolio items to showcase skills
 
 ---
 
@@ -131,18 +128,18 @@
 ## Progress Trends
 
 ### Completion Distribution
-- **Computer Programming 2**: ░░░░░░░░░░░░░░░░░░░░ 0%
-- **Ethical Hacking**: ░░░░░░░░░░░░░░░░░░░░ 0%
-- **Information Assurance and Security 1**: ░░░░░░░░░░░░░░░░░░░░ 0%
+- **Computer Programming 2**: █████░░░░░░░░░░░░░░░ 25%
+- **Ethical Hacking**: █████░░░░░░░░░░░░░░░ 25%
+- **Information Assurance and Security 1**: █████░░░░░░░░░░░░░░░ 25%
 - **Applications Development and Emerging Technologies**: ░░░░░░░░░░░░░░░░░░░░ 0%
 - **Platform Technologies**: ░░░░░░░░░░░░░░░░░░░░ 0%
 
 
 ### Achievement Highlights
 
-- **Most Active Course**: Computer Programming 2 (0 items)
-- **Portfolio Leaders**: 0 courses with portfolio items
-- **Content Production**: 0 total items created
+- **Most Active Course**: Computer Programming 2 (1 items)
+- **Portfolio Leaders**: 1 courses with portfolio items
+- **Content Production**: 3 total items created
 
 ## Recommendations for Next Week
 
