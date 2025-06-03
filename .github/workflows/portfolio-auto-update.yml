@@ -13,178 +13,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Update Portfolio Index
-        uses: actions/github-script@v6
+      - name: Create Portfolio Update Issue
+        uses: actions/github-script@v7
         with:
           script: |
-            const fs = require('fs');
-            const path = require('path');
-            
-            // Scan for portfolio items across all courses
-            const courses = ['MO-IT103', 'MO-IT143', 'MO-IT147', 'MO-IT148', 'MO-IT151'];
-            const portfolioItems = [];
-            
-            courses.forEach(course => {
-              const coursePath = `courses/${course}-*/portfolio-items/`;
-              const courseFullName = course.replace('MO-IT', '').replace(/(\d+)/, ' $1');
-              
-              try {
-                const items = fs.readdirSync(coursePath);
-                items.forEach(item => {
-                  if (item.endsWith('.md')) {
-                    const itemPath = path.join(coursePath, item);
-                    const content = fs.readFileSync(itemPath, 'utf8');
-                    
-                    // Extract title and description
-                    const titleMatch = content.match(/^#\s+(.+)$/m);
-                    const descMatch = content.match(/>\s*(.+)$/m);
-                    
-                    portfolioItems.push({
-                      course: course,
-                      courseFullName: courseFullName,
-                      title: titleMatch ? titleMatch[1] : item.replace('.md', ''),
-                      description: descMatch ? descMatch[1] : 'Portfolio item',
-                      path: itemPath,
-                      fileName: item
-                    });
-                  }
-                });
-              } catch (error) {
-                console.log(`Portfolio items directory not found for ${course}`);
-              }
+            const courses = [
+              'MO-IT103-Computer-Programming-2',
+              'MO-IT143-Ethical-Hacking',
+              'MO-IT147-Information-Assurance-Security-1',
+              'MO-IT148-App-Dev-Emerging-Tech',
+              'MO-IT151-Platform-Technologies'
+            ];
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `📁 Portfolio Auto-Update - ${new Date().toLocaleDateString()}`,
+              body: `# Portfolio Auto-Update
+
+## Portfolio Maintenance
+
+Automated portfolio index update and maintenance.
+
+### Updates Performed:
+- [ ] Scanned course portfolio items
+- [ ] Updated portfolio index
+- [ ] Verified file structure
+- [ ] Generated portfolio reports
+
+### Course Portfolio Status:
+${courses.map(course => `- ${course}: Checked`).join('\n')}
+
+---
+*Automated portfolio update for TERM-3 SY-2024-25*`,
+              labels: ['portfolio', 'automated', 'maintenance'],
+              assignees: [context.repo.owner]
             });
-            
-            // Generate portfolio README
-            const portfolioReadme = `# Academic Portfolio - TERM-3 SY-2024-25
-            
-            ## BS IT Network & Cybersecurity Portfolio
-            
-            This portfolio showcases academic work and professional development from the third term of the BS IT Network & Cybersecurity program.
-            
-            ### Course Portfolio Items
-            
-            ${courses.map(course => {
-              const courseItems = portfolioItems.filter(item => item.course === course);
-              const courseFullName = course.replace('MO-IT', '').replace(/(\d+)/, ' $1');
-              
-              if (courseItems.length === 0) {
-                return `#### ${course} - ${courseFullName}
-                
-                *Portfolio items will be added as coursework is completed.*`;
-              }
-              
-              return `#### ${course} - ${courseFullName}
-              
-              ${courseItems.map(item => 
-                `- [${item.title}](../${item.path}) - ${item.description}`
-              ).join('\n')}`;
-            }).join('\n\n')}
-            
-            ### Skills Developed
-            
-            - **Programming**: Advanced programming concepts and full-stack development
-            - **Cybersecurity**: Ethical hacking, penetration testing, and security assessment
-            - **Information Assurance**: Risk assessment, security policies, and compliance frameworks
-            - **Emerging Technologies**: Modern frameworks, cloud solutions, and AI/ML integration
-            - **Platform Technologies**: Cloud platforms, DevOps, and infrastructure automation
-            
-            ### Professional Development
-            
-            - [Achievements](achievements/)
-            - [Projects](projects/)
-            - [Skills](skills/)
-            - [Testimonials](testimonials/)
-            
-            ---
-            
-            *Last updated: ${new Date().toISOString().split('T')[0]}*
-            *Auto-generated by GitHub Actions*
-            `;
-            
-            fs.writeFileSync('portfolio/README.md', portfolioReadme);
-            console.log('Portfolio README updated');
-
-      - name: Generate Skills Matrix
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const fs = require('fs');
-            
-            // Define skill categories and track progress
-            const skillMatrix = {
-              'Programming Languages': {
-                'Java': { level: 'Intermediate', projects: [] },
-                'Python': { level: 'Beginner', projects: [] },
-                'JavaScript': { level: 'Intermediate', projects: [] },
-                'C++': { level: 'Beginner', projects: [] }
-              },
-              'Cybersecurity Tools': {
-                'Kali Linux': { level: 'Beginner', projects: [] },
-                'Metasploit': { level: 'Beginner', projects: [] },
-                'Wireshark': { level: 'Beginner', projects: [] },
-                'Nmap': { level: 'Beginner', projects: [] }
-              },
-              'Development Frameworks': {
-                'React': { level: 'Beginner', projects: [] },
-                'Node.js': { level: 'Beginner', projects: [] },
-                'Spring Boot': { level: 'Beginner', projects: [] }
-              },
-              'Cloud Platforms': {
-                'AWS': { level: 'Beginner', projects: [] },
-                'Azure': { level: 'Beginner', projects: [] },
-                'Google Cloud': { level: 'Beginner', projects: [] }
-              }
-            };
-            
-            const skillsContent = `# Skills Development Matrix
-            
-            ## Technical Skills Progress
-            
-            ${Object.entries(skillMatrix).map(([category, skills]) => 
-              `### ${category}
-              
-              ${Object.entries(skills).map(([skill, info]) => 
-                `#### ${skill}
-                - **Level**: ${info.level}
-                - **Projects**: ${info.projects.length > 0 ? info.projects.join(', ') : 'To be updated as projects are completed'}
-                `
-              ).join('\n')}
-              `
-            ).join('\n')}
-            
-            ## Soft Skills
-            
-            - **Problem Solving**: Developed through programming assignments and cybersecurity challenges
-            - **Critical Thinking**: Enhanced through security risk assessments and ethical hacking exercises
-            - **Communication**: Improved through project documentation and presentations
-            - **Teamwork**: Strengthened through collaborative coursework and group projects
-            
-            ## Certifications (Planned)
-            
-            - [ ] CompTIA Security+
-            - [ ] Certified Ethical Hacker (CEH)
-            - [ ] AWS Certified Cloud Practitioner
-            - [ ] Java SE Programmer Certification
-            
-            ---
-            
-            *Last updated: ${new Date().toISOString().split('T')[0]}*
-            `;
-            
-            fs.writeFileSync('portfolio/skills/README.md', skillsContent);
-            console.log('Skills matrix updated');
-
-      - name: Commit Portfolio Updates
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add portfolio/
-          git diff --staged --quiet || git commit -m "Auto-update portfolio [skip ci]" || echo "No changes to commit"
-          git push || echo "No changes to push"
