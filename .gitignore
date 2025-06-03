@@ -9,10 +9,11 @@
 *.tmp
 *.log
 
-# Private learning materials (handled by submodule)
-learning-materials-private/
+# Private learning materials - course directories (handled by Git submodule)
 **/learning-materials/
 !**/learning-materials/.gitkeep
+
+# NOTE: learning-materials-private/ is a Git submodule and should NOT be ignored
 
 # Academic workspace specific
 *.code-workspace

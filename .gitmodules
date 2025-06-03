@@ -1,0 +1,3 @@
+[submodule "learning-materials-private"]
+	path = learning-materials-private
+	url = https://github.com/joembolinas/TERM3-Learning-Materials-Private.git
