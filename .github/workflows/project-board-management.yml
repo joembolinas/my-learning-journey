@@ -13,44 +13,169 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          submodules: false  # Skip private submodule in CI
+        uses: actions/checkout@v3
 
-      - name: Create Project Management Issue (Scheduled)
-        if: github.event_name == 'schedule'
-        uses: actions/github-script@v7
+      - name: Update Project Board
+        uses: actions/github-script@v6
         with:
           script: |
-            const courseLabels = [
-              'MO-IT103-Computer-Programming-2',
-              'MO-IT143-Ethical-Hacking',
-              'MO-IT147-Information-Assurance-Security-1',
-              'MO-IT148-App-Dev-Emerging-Tech',
-              'MO-IT151-Platform-Technologies'
-            ];
+            const { context, github } = require('@actions/github');
+            
+            // Define project board columns
+            const columns = {
+              'To Do': 'course-assignments',
+              'In Progress': 'in-progress',
+              'Review': 'review',
+              'Done': 'completed'
+            };
+            
+            // Course prefixes for categorization
+            const courses = ['MO-IT103', 'MO-IT143', 'MO-IT147', 'MO-IT148', 'MO-IT151'];
+            
+            if (context.eventName === 'issues') {
+              const issue = context.payload.issue;
+              
+              // Categorize by course
+              let courseFound = false;
+              for (const course of courses) {
+                if (issue.title.includes(course) || issue.body.includes(course)) {
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    labels: [course.toLowerCase(), 'course-work']
+                  });
+                  courseFound = true;
+                  break;
+                }
+              }
+              
+              // Auto-assign based on issue type
+              if (issue.title.includes('Assignment') || issue.title.includes('Project')) {
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  labels: ['academic-work']
+                });
+              }
+              
+              if (issue.title.includes('Portfolio')) {
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  labels: ['portfolio-item']
+                });
+              }
+            }
+
+      - name: Update Progress Tracking
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            // Update workspace progress file
+            const progressFile = 'documentation/workspace-progress.md';
+            const currentDate = new Date().toISOString().split('T')[0];
+            
+            let progressContent = '';
+            try {
+              progressContent = fs.readFileSync(progressFile, 'utf8');
+            } catch (error) {
+              progressContent = '# Workspace Progress\n\n';
+            }
+            
+            // Add automated progress entry
+            const progressEntry = `\n## ${currentDate} - Automated Progress Update\n\n- Project board updated automatically\n- Issue labels synchronized\n- Course categorization completed\n\n`;
+            
+            progressContent += progressEntry;
+            fs.writeFileSync(progressFile, progressContent);
+            
+            console.log('Progress tracking updated');
+
+  weekly-summary:
+    runs-on: ubuntu-latest
+    if: github.event.schedule
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate Weekly Summary
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { context, github } = require('@actions/github');
+            
+            // Get issues from the past week
+            const oneWeekAgo = new Date();
+            oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+            
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'all',
+              since: oneWeekAgo.toISOString(),
+              per_page: 100
+            });
+            
+            // Categorize issues by course and status
+            const summary = {
+              'MO-IT103': { completed: 0, inProgress: 0, new: 0 },
+              'MO-IT143': { completed: 0, inProgress: 0, new: 0 },
+              'MO-IT147': { completed: 0, inProgress: 0, new: 0 },
+              'MO-IT148': { completed: 0, inProgress: 0, new: 0 },
+              'MO-IT151': { completed: 0, inProgress: 0, new: 0 }
+            };
+            
+            issues.data.forEach(issue => {
+              const title = issue.title;
+              const state = issue.state;
+              const labels = issue.labels.map(label => label.name);
+              
+              // Find course
+              Object.keys(summary).forEach(course => {
+                if (title.includes(course) || labels.includes(course.toLowerCase())) {
+                  if (state === 'closed') {
+                    summary[course].completed++;
+                  } else if (labels.includes('in-progress')) {
+                    summary[course].inProgress++;
+                  } else {
+                    summary[course].new++;
+                  }
+                }
+              });
+            });
+            
+            // Create weekly summary issue
+            const summaryTitle = `Weekly Progress Summary - Week of ${new Date().toISOString().split('T')[0]}`;
+            const summaryBody = `
+            # Weekly Academic Progress Summary
+            
+            ## Course Progress
+            ${Object.entries(summary).map(([course, stats]) => 
+              `### ${course}
+              - ✅ Completed: ${stats.completed}
+              - 🔄 In Progress: ${stats.inProgress}
+              - 🆕 New: ${stats.new}
+              `
+            ).join('\n')}
+            
+            ## Next Week Focus
+            - Review in-progress items
+            - Complete pending assignments
+            - Update portfolio items
+            
+            ---
+            *This summary was generated automatically by GitHub Actions*
+            `;
+            
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `🗂️ Project Board Maintenance - ${new Date().toLocaleDateString()}`,
-              body: `# Project Board Maintenance
-
-## Automated Project Management
-
-Weekly project board organization and maintenance.
-
-### Maintenance Tasks:
-- [ ] Reviewed open issues
-- [ ] Updated project labels
-- [ ] Organized course assignments
-- [ ] Checked issue priorities
-
-### Course Organization:
-${courseLabels.map(course => `- ${course}: Organized`).join('\n')}
-
----
-*Automated project board management for TERM-3 SY-2024-25*`,
-              labels: ['project-management', 'automated', 'maintenance'],
-              assignees: [context.repo.owner]
+              title: summaryTitle,
+              body: summaryBody,
+              labels: ['weekly-summary', 'automation']
             });

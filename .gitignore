@@ -65,5 +65,3 @@ automation/logs/
 .Trashes
 ehthumbs.db
 Thumbs.db
-*.code-workspace
-.bat
