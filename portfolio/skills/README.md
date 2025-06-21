@@ -3,30 +3,73 @@
 ## Technical Skills Progress
 
 ### Programming Languages
-- **Java**: Intermediate level - Developed through multiple coursework projects
-- **Python**: Beginner to Intermediate - Security scripting and automation
-- **JavaScript**: Intermediate - Web application development
-- **C++**: Beginner - System programming fundamentals
-
+  
+  #### Java
+    - **Level**: Intermediate
+    - **Projects**: To be updated as projects are completed
+    
+#### Python
+    - **Level**: Beginner
+    - **Projects**: To be updated as projects are completed
+    
+#### JavaScript
+    - **Level**: Intermediate
+    - **Projects**: To be updated as projects are completed
+    
+#### C++
+    - **Level**: Beginner
+    - **Projects**: To be updated as projects are completed
+    
+  
 ### Cybersecurity Tools
-- **Kali Linux**: Hands-on experience through ethical hacking coursework
-- **Metasploit**: Penetration testing framework usage
-- **Wireshark**: Network analysis and security assessment
-- **Nmap**: Network discovery and security auditing
-
+  
+  #### Kali Linux
+    - **Level**: Beginner
+    - **Projects**: To be updated as projects are completed
+    
+#### Metasploit
+    - **Level**: Beginner
+    - **Projects**: To be updated as projects are completed
+    
+#### Wireshark
+    - **Level**: Beginner
+    - **Projects**: To be updated as projects are completed
+    
+#### Nmap
+    - **Level**: Beginner
+    - **Projects**: To be updated as projects are completed
+    
+  
 ### Development Frameworks
-- **React**: Modern web application development
-- **Node.js**: Server-side JavaScript development
-- **Spring Boot**: Java enterprise application development
-
+  
+  #### React
+    - **Level**: Beginner
+    - **Projects**: To be updated as projects are completed
+    
+#### Node.js
+    - **Level**: Beginner
+    - **Projects**: To be updated as projects are completed
+    
+#### Spring Boot
+    - **Level**: Beginner
+    - **Projects**: To be updated as projects are completed
+    
+  
 ### Cloud Platforms
-- **AWS**: Cloud infrastructure and services
-- **Azure**: Microsoft cloud platform experience
-- **Google Cloud**: Multi-cloud competency development
-
-## Skills from Portfolio Items
-
-- **[Primary skills showcased]**: Demonstrated in portfolio projects
+  
+  #### AWS
+    - **Level**: Beginner
+    - **Projects**: To be updated as projects are completed
+    
+#### Azure
+    - **Level**: Beginner
+    - **Projects**: To be updated as projects are completed
+    
+#### Google Cloud
+    - **Level**: Beginner
+    - **Projects**: To be updated as projects are completed
+    
+  
 
 ## Soft Skills
 
@@ -42,13 +85,6 @@
 - [ ] AWS Certified Cloud Practitioner
 - [ ] Java SE Programmer Certification
 
-## Portfolio Integration
-
-- **Total Skills Demonstrated**: 1
-- **Portfolio Items Contributing**: 1
-- **Skill Development Courses**: 1
-
 ---
 
-*Last updated: 2025-06-03*
-*Skills matrix automatically updated based on portfolio content*
+*Last updated: 2025-06-20*
